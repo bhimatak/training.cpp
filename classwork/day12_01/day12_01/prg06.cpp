@@ -7,7 +7,7 @@ void display(int[], int);
 
 void updateArr(int[], int);
 void displayPtr(int *, int);
-
+int lenStr(char* str1);
 
 int main()
 {
@@ -49,6 +49,8 @@ int main()
 	displayPtr(a, n);
 	updateArr(a, 3);
 	display(a, n);
+	char name[] = "bhima";
+	cout << lenStr(name)<<endl;
 	return 0;
 }
 
@@ -68,3 +70,41 @@ void updateArr(int arr[], int pos)
 {
 	arr[pos] = 444;
 }
+
+
+int lenStr(char* str1)
+{
+	int count = 0;
+	while (*str1 != '\0')
+	{
+		count++;
+		str1++;
+	}
+	return count;
+}
+
+/*
+TC01
+i/p
+s1 = "ABCDE"
+s2 = "abcde"
+o/p
+s3 = AaBbCcDdEe
+
+TC02
+i/p
+s1 = "ABCDEFGH"
+s2 = "abcde"
+o/p
+s3 = AaBbCcDdEeFGH
+
+TC03
+i/p
+s1 = "ABCDE"
+s2 = "abcdefgh"
+o/p
+s3 = AaBbCcDdEefgh
+
+
+
+*/
