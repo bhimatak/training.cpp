@@ -18,4 +18,15 @@ int main()
 		cout << endl;
 	}
 
+	for (i = n-1;i >=0;i--) // rows
+	{
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		for (k = 0;k < ((2 * n) - (2 * i));k++)
+			cout << "  ";
+		for (j = 0;j <= i;j++)
+			cout << "* ";
+		cout << endl;
+	}
+
 }
