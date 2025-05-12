@@ -51,13 +51,19 @@ int main()
 	void* ptr = nullptr;
 
 	ptr = &a;
-	printf("Address of ptr = %u and it value= %u\n", &ptr, ptr);
+	printf("\nAddress of ptr = %u and it value= %u\n", &ptr, ptr);
 
+	printf("\nvalue stored at %u is %d\n", ptr, *(int *)ptr);
+
+	
+	
 	ptr = &ch;
 	printf("Address of ptr = %u and it value= %u\n", &ptr, ptr);
 
 	ptr = &f;
 	printf("Address of ptr = %u and it value= %u\n", &ptr, ptr);
+
+
 
 
 	return 0;
