@@ -9,6 +9,8 @@ struct <tagName>
 
 */
 
+
+
 typedef struct Employee
 {
 	int empID;
@@ -17,6 +19,8 @@ typedef struct Employee
 	string empAddress;
 	char empGender;
 }EMP;
+
+void disp(EMP);
 
 
 int main()
@@ -29,12 +33,7 @@ int main()
 	e1.empPhno = 889900;
 
 	cout << "Size of EMP : " << sizeof(EMP) << "\t size=" << sizeof(e1) << endl;
-
-	cout << "Name: " << e1.empName << endl;
-	cout << "ID: " << e1.empID << endl;
-	cout << "Gender: " << e1.empGender << endl;
-	cout << "Phone: " << e1.empPhno << endl;
-	cout << "Address: " << e1.empAddress << endl;
+	disp(e1);
 
 	EMP e[3];
 	for (int i = 0;i < 3;i++) {
@@ -45,15 +44,26 @@ int main()
 		cout << "Address: "; cin >> e[i].empAddress;
 
 	}
-	for (int i = 0;i < 3;i++){
-		cout << "Name: " << e[i].empName << endl;
-		cout << "ID: " << e[i].empID << endl;
-		cout << "Gender: " << e[i].empGender << endl;
-		cout << "Phone: " << e[i].empPhno << endl;
-		cout << "Address: " << e[i].empAddress << endl;
-		cout << "===========================================" << endl;
+	
+
+
+	for (int i = 0;i < 3;i++)
+	{
+		disp(e[i]);
 	}
+
 	cout << endl;
 
 	return 0;
+}
+
+void disp(EMP e)
+{
+	cout << "===========================================" << endl;
+	cout << "Name: " << e.empName << endl;
+	cout << "ID: " << e.empID << endl;
+	cout << "Gender: " << e.empGender << endl;
+	cout << "Phone: " << e.empPhno << endl;
+	cout << "Address: " << e.empAddress << endl;
+	cout << "===========================================" << endl;
 }
