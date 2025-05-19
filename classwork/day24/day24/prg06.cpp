@@ -31,8 +31,8 @@ int main() {
         cout<<"Enter the Employee details for "<<(i+1)<<" Detpartment"<<endl;
         for(int j=0;j<noEmps;j++)
         {
-            cout<<"ID: ";cin>>e[i][j]->e_id;
-            cout<<"Name: ";cin>>e[i][j]->e_name;
+            cout<<"ID: ";cin>>e[i][j].e_id;
+            cout<<"Name: ";cin>>e[i][j].e_name;
         }
         cout<<"========================"<<endl;
         
@@ -45,8 +45,8 @@ int main() {
         cout<<"Department "<<(i+1)<<endl;
         for(int j=0;j<noEmps;j++)
         {
-            cout<<"ID: "<<e[i][j]->e_id<<endl;
-            cout<<"Name: "<<e[i][j]->e_name<<endl;
+            cout<<"ID: "<<e[i][j].e_id<<endl;
+            cout<<"Name: "<<e[i][j].e_name<<endl;
         }
         cout<<"========================"<<endl;
         
