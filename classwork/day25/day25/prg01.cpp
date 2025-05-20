@@ -32,6 +32,8 @@ bool getDetails(EMP &e)
 
     //do the validation of name here
     cout<<"Salary: ";cin>>e.e_sal;
+    
+    return true;
 
 }
 
@@ -49,5 +51,17 @@ bool v_name(string name)
 
 int main()
 {
+    EMP e;
+
+    if(getDetails(e)== true)
+        {
+            cout<<"Updated the records"<<endl;
+            printDetails(e);
+        }
+    else
+        cout<<"Something went wrong"<<endl;
     
+    
+    
+    return 0;
 }
