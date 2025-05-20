@@ -12,7 +12,8 @@ typedef struct Employee
 
 int main() {
  
- EMP *e1 = (EMP *)malloc(sizeof(EMP)*3);
+ //EMP *e1 = (EMP *)malloc(sizeof(EMP)*3);
+ EMP* e1 = (EMP*)calloc(3, sizeof(EMP));
  EMP *temp = e1;
  cin>>e1->e_id>>e1->e_name>>e1->e_desg;
  e1++;
