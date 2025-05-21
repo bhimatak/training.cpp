@@ -27,18 +27,24 @@ void Student::setMarks(float m[])
 void Student::display()
 {
 
-	cout << "Name: " << name << endl;
-	cout << "Roll No: " << rollno << endl;
-
-	cout << "Avg: " << calcAvg();
-	cout << endl;
+	cout << name<<"\t";
+	cout << rollno<<"\t";
+	for (int i = 0;i < 4;i++) {
+		cout << marks[i] << "\t";
+	}
+	cout << calcAvg();
 }
 
 float Student::calcAvg() {
 	float avg = 0.0;
 	for (int i = 0;i < 4;i++) {
-		cout << marks[i] << "\t";
+		//cout << marks[i] << "\t";
 		avg += marks[i];
 	}
 	return avg / 4.0;
+}
+
+float Student::grading()
+{
+	return calcAvg();
 }

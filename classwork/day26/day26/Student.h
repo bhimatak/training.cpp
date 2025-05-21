@@ -14,6 +14,7 @@ public:
 	int getRollno();
 	void setMarks(float[]);
 	void display();
+	float grading();
 
 private:
 	float calcAvg();
