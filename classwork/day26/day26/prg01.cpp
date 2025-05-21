@@ -9,46 +9,57 @@ private:
 	char name[20];
 	float marks[4];
 public:
-	void setName(char* s)
-	{
-		strcpy(name, s);
-	}
-	char* getName() {
-		return name;
-	}
-
-	void setRollno(int r) {
-		rollno = r;
-	}
-	int getRollno() {
-		return rollno;
-	}
-	void setMarks(float m[])
-	{
-		for (int i = 0;i < 4;i++)
-			marks[i] = m[i];
-	}
-
-	void display()
-	{
-		
-		cout << "Name: " << name << endl;
-		cout << "Roll No: " << rollno << endl;
-		
-		cout<<"Avg: " << calcAvg();
-		cout << endl;
-	}
+	void setName(char*);
+	char* getName();
+	void setRollno(int);
+	int getRollno();
+	void setMarks(float []);
+	void display();
+	
 private:
-	float calcAvg() {
-		float avg = 0.0;
-		for (int i = 0;i < 4;i++) {
-			cout << marks[i] << "\t";
-			avg += marks[i];
-		}
-		return avg/4.0;
-	}
+	float calcAvg();
 
 };
+
+//:: => scope resulotion operator
+void Student::setName(char* s)
+{
+	strcpy(name, s);
+}
+char* Student::getName() {
+	return name;
+}
+
+void Student::setRollno(int r) {
+	rollno = r;
+}
+int Student::getRollno() {
+	return rollno;
+}
+void Student::setMarks(float m[])
+{
+	for (int i = 0;i < 4;i++)
+		marks[i] = m[i];
+}
+
+void Student::display()
+{
+
+	cout << "Name: " << name << endl;
+	cout << "Roll No: " << rollno << endl;
+
+	cout << "Avg: " << calcAvg();
+	cout << endl;
+}
+
+float Student::calcAvg() {
+	float avg = 0.0;
+	for (int i = 0;i < 4;i++) {
+		cout << marks[i] << "\t";
+		avg += marks[i];
+	}
+	return avg / 4.0;
+}
 
 int main()
 {
