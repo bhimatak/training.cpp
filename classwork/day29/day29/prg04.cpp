@@ -15,10 +15,11 @@ NODE* addNodeBeg(NODE*, NODE*);
 NODE* addNodeEnd(NODE*, NODE*);
 int dispList(NODE*);
 int dispMenu();
+void freeNodes(NODE*);
 
 int main()
 {
-	NODE* head = NULL, * nn = NULL;
+	NODE* head = NULL;
 	int ch = 1;
 	while(ch)
 	{
@@ -41,7 +42,7 @@ int main()
 			cout<<"Something went wrong"<<endl;
 		}
 	}
-	
+	freeNodes(head); //*very improtant Memory Leaks
 	cout << "Exiting program...." << endl;
 	return 0;
 }
@@ -102,4 +103,15 @@ NODE* createNode()
 	cin >> nn->data;
 	nn->next = NULL;
 	return nn;
+}
+
+void freeNodes(NODE* head)
+{
+	NODE* temp = head;
+	while (head->next != NULL)
+	{
+		temp = head->next;
+		free(head);
+		head = temp;
+	}
 }
