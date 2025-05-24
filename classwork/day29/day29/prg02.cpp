@@ -64,5 +64,22 @@ int main()
 		head = head->ptr;
 	}
 	cout << "NULL"<<endl;
+
+	struct node n4;
+	n4.v = 40;
+	n4.ptr = NULL;
+
+	//add node btw 2 nodes
+	n1.ptr = &n4;
+	n4.ptr = &n2;
+
+	head = &n1;
+	while (head != NULL)
+	{
+		cout << head->v << "->";
+		head = head->ptr;
+	}
+	cout << "NULL" << endl;
+
 	return 0;
 }
