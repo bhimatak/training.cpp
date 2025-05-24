@@ -10,6 +10,8 @@ typedef struct node
 	struct node* next;
 }NODE;
 
+void dispList(NODE*);
+
 int main()
 {
 	NODE* nn = NULL, * head = NULL, * temp = NULL;
@@ -41,6 +43,15 @@ int main()
 
 	head = temp; //head is again pointed to BA of list
 
+	dispList(head);
+
+	return 0;
+}
+
+
+void dispList(NODE* head)
+{
+	cout << "List is \n" << endl;
 	while (head != NULL)
 	{
 		cout << head->data << " -> ";
@@ -48,3 +59,15 @@ int main()
 	}
 	cout << "NULL" << endl;
 }
+
+
+/*
+o/p
+
+Menu
+1. AddNodeBeg
+2. AddNodeEnd
+3. DisplayList
+4. Exit
+
+*/
