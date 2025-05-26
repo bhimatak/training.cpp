@@ -73,6 +73,15 @@ void LinkedList::display()
 bool LinkedList::delNode(int target)
 {
 	Node* temp = head;
+	if (temp->getData() == target)
+	{
+		//code of first node
+		Node* fptr = temp->getNext();
+		delete temp;
+		head = fptr;
+		return true;
+	}
+
 	while (temp != nullptr) {
 		if (temp->getNext()->getData() == target)
 			break;

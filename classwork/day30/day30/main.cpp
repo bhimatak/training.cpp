@@ -18,7 +18,7 @@ int main()
 	l2.addAfter(target, val);
 	l2.display();
 
-	l2.delNode(50);
+	l2.delNode(10);
 	l2.display();
 
 	return 0;
