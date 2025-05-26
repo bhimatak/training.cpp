@@ -15,6 +15,7 @@ public:
 	int addBeg(int);
 	int addEnd(int);
 	void addAfter(int, int);
+	bool delNode(int);
 	void display();
 };
 

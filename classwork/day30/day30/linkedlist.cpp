@@ -68,3 +68,21 @@ void LinkedList::display()
 	}
 	cout << "NULL" << endl;
 }
+
+
+bool LinkedList::delNode(int target)
+{
+	Node* temp = head;
+	while (temp != nullptr) {
+		if (temp->getNext()->getData() == target)
+			break;
+		temp = temp->getNext();
+	}
+	Node* fptr = temp;
+	Node* sptr = temp->getNext();
+	cout << "ftpr: " << fptr->getData() << "\tsptr: " << sptr->getData() << endl;
+	fptr->setNext(sptr->getNext());
+	delete sptr;
+
+	return true;
+}
