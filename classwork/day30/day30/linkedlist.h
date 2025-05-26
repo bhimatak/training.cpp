@@ -15,8 +15,8 @@ public:
 	}
 	int getData();
 	int setData(int);
-	Node* getNode();
-	void setNode(Node*);
+	Node* getNext();
+	void setNext(Node*);
 	
 };
 
@@ -30,12 +30,12 @@ int Node::getData()
 	return data;
 }
 
-Node* Node::getNode()
+Node* Node::getNext()
 {
 	return next;
 }
 
-void Node::setNode(Node* nn)
+void Node::setNext(Node* nn)
 {
 	next = nn;
 }
@@ -43,11 +43,11 @@ void Node::setNode(Node* nn)
 
 class LinkedList {
 private:
-	Node* n=nullptr, *head=nullptr, *temp=nullptr;
+	Node* head;
 public:
 	LinkedList() {
-		//createNode
-		n = new Node;
+		
+		head = nullptr;
 	}
 	//LinkedList(int) {}
 
@@ -59,17 +59,22 @@ public:
 
 int LinkedList::addEnd(int v) {
 	
-	n->setData(v);
+	//create new node
+	Node* nn = new Node;
+	nn->setData(v);
+	
 	if (head == nullptr)
 	{
 		//empty list and first node
-		head = n;
-		temp = n;
+		head = nn;
 	}
 	else
 	{
-		head->setNode(n);
-		head = head->getNode();
+		Node* temp = head;
+		while(temp->getNext()!=nullptr)
+			temp = temp->getNext();
+		temp->setNext(nn);
+		//cout << "new node added with value: " << temp->getData() <<nn->getData() <<endl;
 	}
 
 	return 0;
@@ -77,9 +82,9 @@ int LinkedList::addEnd(int v) {
 
 void LinkedList::display()
 {
-	head = temp;
-	while (head != nullptr) {
-		cout << n->getData() << endl;
-		head = head->getNode();
+	Node* temp = head;
+	while (temp!= nullptr) {
+		cout << temp->getData() << endl;
+		temp = temp->getNext();
 	}
 }
