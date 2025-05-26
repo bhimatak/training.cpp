@@ -7,15 +7,19 @@ class Node
 private:
 	int data;
 	Node* next;
+public:
+	Node(int v = 0) { data = v; next = nullptr; }
 };
 
 class LList
 {
 private:
-	Node* n;
+	Node* head;
 public:
 	LList() {
-		n.data = 0;
-		n->next = nullptr;
+		head = nullptr;
 	}
+	int begin();
+	int append();
+	void display();
 };
