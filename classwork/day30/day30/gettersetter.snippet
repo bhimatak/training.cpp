@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippet Format="1.0.0">
+  <Header>
+    <Title>GetterSetter</Title>
+    <Shortcut>getset</Shortcut>
+    <Description>Generates getter and setter for a member variable</Description>
+    <Author>YourName</Author>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>type</ID>
+        <ToolTip>Type of the variable</ToolTip>
+        <Default>int</Default>
+      </Literal>
+      <Literal>
+        <ID>var</ID>
+        <ToolTip>Variable name</ToolTip>
+        <Default>myVar</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="cpp"><![CDATA[
+${type} get${var}() const {
+    return ${var};
+}
+
+void set${var}(const ${type}& value) {
+    ${var} = value;
+}
+]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
