@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <CodeSnippet Format="1.0.0">
   <Header>
-    <Title>GetterSetter</Title>
+    <Title>GetterSetter with Capitalized Name</Title>
     <Shortcut>getset</Shortcut>
-    <Description>Generates getter and setter for a member variable</Description>
+    <Description>Generates getter and setter with capitalized method names</Description>
     <Author>YourName</Author>
     <SnippetTypes>
       <SnippetType>Expansion</SnippetType>
@@ -18,16 +18,21 @@
       </Literal>
       <Literal>
         <ID>var</ID>
-        <ToolTip>Variable name</ToolTip>
+        <ToolTip>Variable name (e.g., myVar)</ToolTip>
         <Default>myVar</Default>
+      </Literal>
+      <Literal>
+        <ID>Var</ID>
+        <ToolTip>Capitalized Variable name (e.g., MyVar)</ToolTip>
+        <Default>MyVar</Default>
       </Literal>
     </Declarations>
     <Code Language="cpp"><![CDATA[
-${type} get${var}() const {
+${type} get${Var}() const {
     return ${var};
 }
 
-void set${var}(const ${type}& value) {
+void set${Var}(const ${type}& value) {
     ${var} = value;
 }
 ]]>
