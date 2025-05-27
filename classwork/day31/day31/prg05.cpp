@@ -60,7 +60,7 @@ class B : public A
 protected:
 	int a, b;
 public:
-	B(int x, int y, int a, int b) : A(x, y) { this->a = a; this->b = b; }
+	B(int x, int y, int a, int b) : A(x, y), a(a), b(b) {}
 
 	void dispB() { cout << "a: " << a << "\t b: " << b << endl; }
 };
