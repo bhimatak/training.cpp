@@ -65,14 +65,54 @@ public:
 		cout << "Gross Sal: " << gs << endl;
 	}
 
-
+	//friend void setDaysEmployee(EmpFin&, LMS&);
 };
+
+
+class LMS : public Employee
+{
+private:
+	int hours;
+	int days;
+public:
+	LMS(string n, char g, int a, int pno, int id, int s, string dept, int h, int d) :
+		Employee(n, g, a, pno, id, s, dept),
+		hours(h), days(d) {}
+
+	void dispLMS()
+	{
+		cout << "Hours: " << hours << endl;
+		cout << "Days: " << days << endl;
+	}
+//	friend void setDaysEmployee(EmpFin&, LMS&);
+};
+
+/*
+void setDaysEmployee(EmpFin& efObj, LMS& lmsObj)
+{
+	for (i = 0;i < noEmpCount; i++)
+	{
+		if (efObj[i].e_id == lmsObj.e_id)
+		{
+			efObj[i].e_days = lmsObj.getDays();
+		}
+	}
+}
+
+*/
+
 
 int main()
 {
-	EmpFin e("Abhijt",'m',22,7777,293956,26000,"AM",200,2600,100000,30);
+	EmpFin e("Abhijt", 'm', 22, 7777, 293956, 26000, "AM", 200, 2600, 100000, 30);
 	EmpFin e1("Remin", 'm', 22, 7777, 293956, 26000, "AM", 200, 2600, 100000, 31);
 
 	e.dispEmpFin();
 	e1.dispEmpFin();
+
+	LMS lObj("Abhijt", 'm', 22, 7777, 293956, 26000, "AM", 8, 22);
+	lObj.dispLMS();
+
+
+	return 0;
 }
