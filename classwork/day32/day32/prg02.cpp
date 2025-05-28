@@ -14,7 +14,9 @@ public:
 
 class B : protected A 
 {
-
+/*protected: //access mode
+	properties got inherited from A
+	*/
 protected:
 	int b;
 public:
