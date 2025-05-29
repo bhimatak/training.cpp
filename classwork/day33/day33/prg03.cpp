@@ -23,6 +23,10 @@ int main()
     
     intBox.printData();
     stringBox.printData();
-    
+    /*
+    add(10, 12);
+    add(1.1, 2.3);
+    add("bhima", "shankar");
+    */
     return 0;
 }
