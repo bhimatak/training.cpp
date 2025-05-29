@@ -1,3 +1,4 @@
+﻿/*
 #include <iostream>
 #include <typeinfo>
 using namespace std;
@@ -27,4 +28,29 @@ int main() {
     cout << "Type of tc: " << typeid(tc).name() << ", Size: " << sizeof(tc) << endl;
 
     return 0;
+}
+*/
+
+/*
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    wchar_t w = L'₹';  // L prefix = wide character
+    wcout << L"Wide character: " <<w << endl;
+    return 0;
+}
+
+*/
+
+#include <iostream>
+#include <locale>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "");
+    wchar_t w = L'漢';
+    wcout << L"Wide char output: " << w << endl;
+    return 0; 
 }
