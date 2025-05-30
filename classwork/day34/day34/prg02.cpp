@@ -44,6 +44,8 @@ int main()
 
 	//fIO.write((char*)&e, sizeof(e));
 	fIO.write((char*)&s, sizeof(s));
+	cout << fIO.tellg() << endl;
+	cout << fIO.tellp() << endl;
 	fIO.close();
 
 	fIO.open("Test1.txt", ios::in | ios::out | ios::binary);
