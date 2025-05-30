@@ -1,0 +1,14 @@
+101|Abhijit|100000|M|Chennai
+2
+3
+4
+5
+6
+This is a cpp programming class
+8
+9
+10
+Name: 	ID: 	Salary: 
+Name: 	ID: 	Salary: 
+Name1: 	ID1: 	Salary1: 
+Name1: 	ID1: 	Salary1: 
