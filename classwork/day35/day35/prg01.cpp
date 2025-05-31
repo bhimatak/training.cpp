@@ -84,3 +84,9 @@ int main()
 	//cin >> a3;
 	return 0;
 }
+
+/*
+string s = "abcdabcde";
+
+
+*/
