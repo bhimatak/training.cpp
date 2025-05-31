@@ -34,9 +34,23 @@ public:
 		return myArray(*data + *fObj.data + 100);
 	}
 
-	int operator ++(const myArray& fObj)
+	myArray& operator ++() //prefix
 	{
-		return *fObj.data++;
+		++*data;
+		return *this;
+	}
+	myArray& operator ++(int) //postfix
+	{
+		int temp = *data;
+		temp++;
+		*data = temp;
+		return *this;
+	}
+
+	friend ostream& operator <<(ostream &os,const myArray& fObj)
+	{
+		os << "Data: " << *fObj.data << endl;
+		return os;
 	}
 
 	~myArray()
@@ -60,10 +74,13 @@ int main()
 
 	myArray a3 = a1 + a2;
 	a3.display();
+	++a3;
+	a3.display(); //131
 	a3++;
 	a3.display(); //131
 
+	cout << a3;
 	
-
+	//cin >> a3;
 	return 0;
 }
