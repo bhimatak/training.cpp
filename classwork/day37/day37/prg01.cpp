@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
 
 int main() {
@@ -29,7 +30,7 @@ int main() {
         std::cout << "'World' found at position: " << pos << "\n";
 
     // Replace
-    str3.replace(6, 5, "Universe");
+    str3.replace(6, 3, "Universe");
     std::cout << "After replace: " << str3 << "\n";
 
     // Compare
@@ -39,6 +40,26 @@ int main() {
     // Clear
     str1.clear();
     std::cout << "str1 after clear (length): " << str1.length() << "\n";
+
+    std::string s1 = "this is a CPP programming class, class is very helpful";
+
+    int pos1 = s1.find("class");
+
+    std::cout << pos1 << std::endl;
+
+    pos1 = s1.rfind("class");
+    std::cout << pos1 << std::endl;
+
+    pos1 = s1.find_first_of('C');
+
+    std::cout << pos1 << std::endl;
+
+    pos1 = s1.find_last_of('c');
+
+    std::cout << pos1 << std::endl;
+    size_t from = 3;
+    std::transform(s1.begin()+3, s1.end(), s1.begin()+3, ::toupper);
+    std::cout << "Uppercase: " << s1 << "\n";
 
     return 0;
 }
