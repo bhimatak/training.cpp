@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,12 +10,18 @@ class Student
 	string name;
 public:
 	Student(int id, string name): id(id), name(name){}
+	int getID() { return this->id; }
 	void display() {
 		cout << "ID: " << id << endl;
 		cout << "Name: " << name << endl;
 	}
 
 };
+
+bool keyFunc(Student s1, Student s2)
+{
+	return (s1.getID() < s2.getID()) ? true : false;
+}
 /*
 void updateID(Student* ptr)
 {
@@ -90,7 +97,17 @@ int main()
 		ptr->display();
 		ptr++;
 		ptr->display();
+		
+		cout << "=================Before Sorting====================" << endl;
+		for (auto e : emp)
+			e.display();
+		cout << "=====================================" << endl;
 
+		sort(emp.begin(), emp.end(), keyFunc);
+		cout << "=================After Sorting====================" << endl;
+		for (auto e : emp)
+			e.display();
+		cout << "=====================================" << endl;
 
 
 	}
