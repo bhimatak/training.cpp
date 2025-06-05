@@ -109,8 +109,9 @@ int main()
     mapEmp[1] = v;
 
     auto i = mapEmp.begin();
-    auto ele = i->second;
-    for (auto j : ele)
+    auto elef = i->first; //points to the key
+    auto eles = i->second; //points to the value i.e now here vector
+    for (auto j : eles)
         j.disp();
 
 }
