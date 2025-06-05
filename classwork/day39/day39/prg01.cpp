@@ -88,6 +88,11 @@ public:
     void disp() {
         cout << "ID: " << id << "\tName: " << name << endl;
     }
+    void setValues() {
+        cout << "Enter Details, " << endl;
+        cout << "ID: ";cin >> this->id;
+        cout << "Name: ";cin >> this->name;
+    }
 private:
     int id;
     string name;
@@ -115,3 +120,14 @@ int main()
         j.disp();
 
 }
+
+/*
+
+Emp = {
+
+    101 : {101, "abc1", 'm', 10001},
+    102 : {102, "abc2", 'f', 10002},
+    103 : {103, "abc3", 'm', 10003}
+}
+
+*/
