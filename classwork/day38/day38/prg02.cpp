@@ -1,34 +1,40 @@
 #include <iostream>
 #include <list>
+#include <algorithm>
 #include "Students.h"
 
 using namespace std;
 
-void mySort() {
+void mySort(list<Student> &ls) {
 	//logic for sorting Students in asc order
-
-	for (i = 0;i < N;i++)
+	/*
+	for (auto& i: ls)
 	{
-		for (j = 0;j < N;j++)
+		for (auto& j: ls)
 		{
 			if (i < j)
 			{
-				t = i;
+				auto t = i;
 				i = j;
 				j = t;
 			}
 		}
 	}
+	*/
+	ls.sort();
 }
+
+
+
 
 int main()
 {
-	Student s1(101, "abc1");
-	Student s2(102, "abc2");
-	Student s3(103, "abc3");
-	Student s4(104, "abc4");
+	Student s1(101, "Mbc1");
+	Student s2(102, "Zbc2");
+	Student s3(103, "Cbc3");
+	Student s4(104, "Hbc4");
 
-	Student s5(105, "abc5");
+	Student s5(105, "Abc5");
 	Student s6(106, "abc6");
 	Student s7(107, "abc7");
 	
@@ -54,7 +60,11 @@ int main()
 	for (auto lS : listStuds)
 		lS.display();
 
+	mySort(listStuds);
 
+	cout << "===========After Sort=================" << endl;
+	for (auto lS : listStuds)
+		lS.display();
 
 	cout << endl;
 	return 0;

@@ -13,9 +13,11 @@ public:
 	void setId(int id) { this->id = id; }
 	string getName() { return name; }
 	void setName(string name) { this->name = name; }
-	void display() { cout << "ID: " << name << " | Name: " << name << endl; }
+	void display() { cout << "ID: " << id << " | Name: " << name << endl; }
 	bool operator==(const Student& other) const {
 		return id == other.id;
 	}
-
+	bool operator <(const Student& other) const {
+		return id < other.id;
+	}
 };
