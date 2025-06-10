@@ -10,9 +10,9 @@ class Employee {
 	int id;
 	string name;
 public:
-	Employee():id(0),name(""){}
+	Employee(): id(0), name("") {}
 	Employee(int id, string name) : id(id), name(name) {}
-	Employee(Employee& others) {
+	Employee(const Employee& others) {
 		this->id = others.id;
 		this->name = others.name;
 	}
@@ -27,6 +27,12 @@ public:
 	{
 		is >> e.id >> e.name;
 		return is;
+	}
+
+	friend ostream& operator <<(ostream& os, Employee& e)
+	{
+		os << "ID: " << e.id << "\tName: " << e.name << endl;
+		return os;
 	}
 };
 
@@ -46,7 +52,7 @@ int main()
 	}
 
 	for (auto e : emp)
-		e.disp();
+		cout << e;
 
 	
 
