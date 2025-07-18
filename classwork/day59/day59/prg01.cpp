@@ -8,7 +8,7 @@
 LONG WINAPI CustomUnhandledExceptionFilter(EXCEPTION_POINTERS* ExceptionInfo) {
     // Create dump file
     HANDLE hFile = CreateFile(
-        L"crashdump.dmp",
+        L"crashdump1.dmp",
         GENERIC_WRITE,
         0,
         nullptr,
@@ -55,8 +55,13 @@ int main() {
     std::cout << "About to crash..." << std::endl;
 
     // Force a crash: null pointer dereference
-    int* p = nullptr;
+  /*  int* p = nullptr;
     *p = 42;  // Crash here
+    */
 
+    int a = 10, b = 0, sum = 0;
+
+    sum = a / b;
+    std::cout << sum << std::endl;
     return 0;
 }
